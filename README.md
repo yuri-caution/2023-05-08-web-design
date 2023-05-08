@@ -28,23 +28,44 @@
 
 ## 팝업창 띄우기
 ```
-<div class="modal">
+<div class="modal active">
         <h2>지나가는 둘</h2>
         <p>노새, 지나가는 둘 한 당신은 듯합니다. 쓸쓸함과 별 노루, 풀이 속의 이제 이웃 시인의 그리워 까닭입니다. 가을로 이름과 가난한 별 까닭이요, 된 버리었습니다. 까닭이요, 언덕 이웃 이름과, 다하지 무성할 멀리 듯합니다. 헤일 시인의 계절이 가난한 하나 하나의 옥 시와 봅니다. 위에 경, 무성할 멀리 우는 오면 내린 봅니다. 밤을 별 하나에 비둘기, 있습니다. 이름과, 했던 쓸쓸함과 그리워 없이 묻힌 불러 까닭입니다. 내일 차 청춘이 오는 까닭이요, 아직 있습니다.</p>
         <a href="#" class="close">닫기</a>
     </div>
+
+
+    <script>
+        $(function(){
+            console.log($('.show_modal'))
+            $('.show_modal').click(function(){
+                $('.modal').addClass('active')
+            })
+
+            $('.close').click(function(){
+                $('.modal').removeClass('active')
+            })
+
+        })
+    </script>
 ```
 ```
 /* modal  */
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 600px;
     height: 460px;
     background-color: #fff;
     border: 1px solid #666;
     padding: 50px 40px;
+    display: none;
+}
+
+.modal.active {
+    display: block;
 }
 
 .modal h2 {

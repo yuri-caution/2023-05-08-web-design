@@ -289,6 +289,10 @@ body {
     display: none;
 }
 
+.modal.active {
+    display: block;
+}
+
 .modal h2 {
     font-size: 36px;
     margin-bottom: 30px;
